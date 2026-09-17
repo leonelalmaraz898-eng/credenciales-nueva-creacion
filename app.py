@@ -13,17 +13,17 @@ st.subheader("Formulario para Credencial 2025-2026")
 with st.form("form_credencial"):
     st.markdown("### Datos del Alumno")
     nombre = st.text_input("Nombre completo del alumno*")
-    categoria = st.selectbox("Categoría", ["1ro", "2do", "3ro", "Maternal"])
-    ciclo = st.text_input("Ciclo", "2025-2026")
+    categoria = st.selectbox("Categoría", ["1ro", "2do", "3ro"])
+    ciclo = st.text_input("Ciclo Escolar", value="2026-2027")
     curp = st.text_input("CURP")
-    maestro = st.text_input("Maestro/a")
-    director = st.text_input("Director/a")
+    maestro = st.text_input("Nombre del Maestro/a")
+    director = st.text_input("Nombre del Director/a")
     sangre = st.text_input("Tipo de sangre")
     alergias = st.text_input("Alergias")
 
     st.markdown("### Datos del Tutor")
     tutor = st.text_input("Nombre del tutor*")
-    direccion = st.text_input("Dirección")
+    direccion_tutor = st.text_input("Dirección del Tutor")
     whatsapp = st.text_input("WhatsApp (10 dígitos)*")
 
     st.markdown("### Datos de la persona autorizada")
@@ -59,11 +59,11 @@ if enviar:
             Director: {director}
             Sangre: {sangre}
             Alergias: {alergias}
-            Tutor: {tutor}
-            Dirección: {dirección}
+            Tutor: {nombre_tutor}
+            Dirección: {dirección_tutor}
             WhatsApp: {whatsapp}
-            Persona Autorizada: {nombre}
-            Whatsapp: {whatapp}
+            Persona Autorizada: {nombre_aut}
+            Whatsapp: {whatapp_aut}
             """
             msg.attach(MIMEText(cuerpo, 'plain'))
 

@@ -33,7 +33,7 @@ with st.form("form_credencial"):
     st.markdown("### Fotos en JPG/PNG*")
     foto_alumno = st.file_uploader("1. FOTO ALUMNO", type=["jpg","jpeg","png"])
     foto_tutor = st.file_uploader("2. FOTO TUTOR", type=["jpg","jpeg","png"])
-    foto_persona autorizada = st.file_uploader("3. FOTO PERSONA AUTORIZADA", type=["jpg","jeg","png"])
+    foto_persona_autorizada = st.file_uploader("3. FOTO PERSONA AUTORIZADA", type=["jpg","jpeg","png"])
     foto_qr = st.file_uploader("4. CAPTURA QR WHATSAPP TUTOR", type=["jpg","jpeg","png"])
 
     enviar = st.form_submit_button("📨 ENVIAR TODO", type="primary")

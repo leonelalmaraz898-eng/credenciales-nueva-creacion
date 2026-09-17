@@ -17,17 +17,24 @@ with st.form("form_credencial"):
     ciclo = st.text_input("Ciclo", "2025-2026")
     curp = st.text_input("CURP")
     maestro = st.text_input("Maestro/a")
+    director = st.text_input("Director/a")
     sangre = st.text_input("Tipo de sangre")
     alergias = st.text_input("Alergias")
 
     st.markdown("### Datos del Tutor")
     tutor = st.text_input("Nombre del tutor*")
+    direccion = st.text_input("Dirección")
     whatsapp = st.text_input("WhatsApp (10 dígitos)*")
+
+    st.markdown("### Datos de la persona autorizada")
+    nombre = st.text_input("Nombre completo de la persona autorizada")
+    whatsapp = st.text_input("Whatsapp (10 dígitos)*")
 
     st.markdown("### Fotos en JPG/PNG*")
     foto_alumno = st.file_uploader("1. FOTO ALUMNO", type=["jpg","jpeg","png"])
     foto_tutor = st.file_uploader("2. FOTO TUTOR", type=["jpg","jpeg","png"])
-    foto_qr = st.file_uploader("3. CAPTURA QR WHATSAPP TUTOR", type=["jpg","jpeg","png"])
+    foto_persona autorizada = st.file_uploader("3. FOTO PERSONA AUTORIZADA", type=["jpg","jeg","png"])
+    foto_qr = st.file_uploader("4. CAPTURA QR WHATSAPP TUTOR", type=["jpg","jpeg","png"])
 
     enviar = st.form_submit_button("📨 ENVIAR TODO", type="primary")
 
@@ -49,14 +56,18 @@ if enviar:
             Ciclo: {ciclo}
             CURP: {curp}
             Maestro: {maestro}
+            Director: {director}
             Sangre: {sangre}
             Alergias: {alergias}
             Tutor: {tutor}
+            Dirección: {dirección}
             WhatsApp: {whatsapp}
+            Persona Autorizada: {nombre}
+            Whatsapp: {whatapp}
             """
             msg.attach(MIMEText(cuerpo, 'plain'))
 
-            for archivo, nombre_archivo in [(foto_alumno, f"1_ALUMNO_{nombre}.jpg"), (foto_tutor, f"2_TUTOR_{nombre}.jpg"), (foto_qr, f"3_QR_{nombre}.jpg")]:
+            for archivo, nombre_archivo in [(foto_alumno, f"1_ALUMNO_{nombre}.jpg"), (foto_tutor, f"2_TUTOR_{nombre}.jpg"), (foto_persona_autorizada_, f"3_Persona_Autorizada_{nombre}.jpg"), (foto_qr, f"4_QR_{nombre}.jpg")]:
                 part = MIMEBase('application', 'octet-stream')
                 part.set_payload(archivo.getvalue())
                 encoders.encode_base64(part)

@@ -67,7 +67,7 @@ if enviar:
             """
             msg.attach(MIMEText(cuerpo, 'plain'))
 
-            for archivo, nombre_archivo in [(foto_alumno, f"1_ALUMNO_{nombre}.jpg"), (foto_tutor, f"2_TUTOR_{nombre}.jpg"), (foto_persona_autorizada_, f"3_Persona_Autorizada_{nombre}.jpg"), (foto_qr, f"4_QR_{nombre}.jpg")]:
+            for archivo, nombre_archivo in [(foto_alumno, f"1_ALUMNO_{nombre}.jpg"), (foto_tutor, f"2_TUTOR_{nombre}.jpg"), (foto_persona_autorizada, f"3_Persona_Autorizada_{nombre}.jpg"), (foto_qr, f"4_QR_{nombre}.jpg")]:
                 part = MIMEBase('application', 'octet-stream')
                 part.set_payload(archivo.getvalue())
                 encoders.encode_base64(part)

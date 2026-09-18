@@ -80,7 +80,7 @@ if enviar:
             server.send_message(msg)
             server.quit()
 
-            st.success(f"✅ ¡Gracias {tutor}! Datos de {nombre} enviados correctamente.")
+            st.success(f"✅ ¡Gracias {nombre_tutor}! Datos de {nombre} enviados correctamente.")
             st.balloons()
         except Exception as e:
             st.error(f"Error: {e}")

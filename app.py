@@ -8,7 +8,7 @@ from datetime import datetime
 
 st.set_page_config(page_title="Nueva Creación - Recolección", layout="centered")
 st.title("🎒 Jardín Nueva Creación")
-st.subheader("Formulario para Credencial 2025-2026")
+st.subheader("Formulario para Credencial 2026-2027")
 
 with st.form("form_credencial"):
     st.markdown("### Datos del Alumno")
@@ -61,9 +61,9 @@ if enviar:
             Alergias: {alergias}
             Tutor: {nombre_tutor}
             Dirección: {dirección_tutor}
-            WhatsApp: {whatsapp}
-            Persona Autorizada: {nombre_aut}
-            Whatsapp: {whatapp_aut}
+            WhatsApp Tutor: {whatsapp_tutor}
+            Persona Autorizada: {nombre_autorizada}
+            Whatsapp Autorizada: {whatapp_autorizada}
             """
             msg.attach(MIMEText(cuerpo, 'plain'))
 

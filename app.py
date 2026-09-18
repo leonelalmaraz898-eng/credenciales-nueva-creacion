@@ -63,7 +63,7 @@ if enviar:
             Dirección: {dirección_tutor}
             WhatsApp Tutor: {whatsapp_tutor}
             Persona Autorizada: {nombre_autorizada}
-            Whatsapp Autorizada: {whatapp_autorizada}
+            WhatsApp Autorizada: {whatsapp_autorizada}
             """
             msg.attach(MIMEText(cuerpo, 'plain'))
 

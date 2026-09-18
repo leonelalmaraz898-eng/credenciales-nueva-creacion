@@ -22,13 +22,13 @@ with st.form("form_credencial"):
     alergias = st.text_input("Alergias")
 
     st.markdown("### Datos del Tutor")
-    tutor = st.text_input("Nombre del tutor*")
-    direccion_tutor = st.text_input("Dirección del Tutor")
-    whatsapp = st.text_input("WhatsApp (10 dígitos)*")
+    nombre_tutor = st.text_input("Nombre del tutor*")
+    dirección_tutor = st.text_input("Dirección del Tutor")
+    whatsapp_tutor = st.text_input("WhatsApp Tutor (10 dígitos)*")
 
     st.markdown("### Datos de la persona autorizada")
-    nombre = st.text_input("Nombre completo de la persona autorizada")
-    whatsapp = st.text_input("Whatsapp (10 dígitos)*")
+    nombre_autorizada = st.text_input("Nombre completo de la persona autorizada")
+    whatsapp_autorizada = st.text_input("Whatsapp persona autorizada (10 dígitos)*")
 
     st.markdown("### Fotos en JPG/PNG*")
     foto_alumno = st.file_uploader("1. FOTO ALUMNO", type=["jpg","jpeg","png"])
@@ -39,7 +39,7 @@ with st.form("form_credencial"):
     enviar = st.form_submit_button("📨 ENVIAR TODO", type="primary")
 
 if enviar:
-    if not nombre or not tutor or not foto_alumno or not foto_tutor or not foto_qr:
+    if not nombre or not_tutor or not foto_alumno or not foto_tutor or not foto_persona_autorizada or not foto_qr:
         st.error("❌ Faltan datos obligatorios")
     else:
         try:

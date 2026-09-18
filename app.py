@@ -39,7 +39,7 @@ with st.form("form_credencial"):
     enviar = st.form_submit_button("📨 ENVIAR TODO", type="primary")
 
 if enviar:
-    if not nombre or not_tutor or not foto_alumno or not foto_tutor or not foto_persona_autorizada or not foto_qr:
+    if not nombre or not nombre_tutor or not foto_alumno or not foto_tutor or not foto_persona_autorizada or not foto_qr:
         st.error("❌ Faltan datos obligatorios")
     else:
         try:
